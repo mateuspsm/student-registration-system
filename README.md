@@ -14,8 +14,15 @@ The software was coded on the Linux system. If you want to run on windows some c
 
 ### For example this.
 
+Change that 
+
 ```
-change __fpurge(stdin) to fflush(stdin)
+ __fpurge(stdin)
+```
+to
+
+```
+ fflush(stdin)
 ```
 
 ## Version
