@@ -8,7 +8,7 @@ This project aims to record students and their grades by saving this data in a b
 
 ![use case](https://github.com/mateuspsm/CRUD-C/blob/master/UseCase/use-case-v1.0.png)
 
-## Running the tests
+## Running project
 
 The software was coded on the Linux system. If you want to run on windows some changes must be made.
 
