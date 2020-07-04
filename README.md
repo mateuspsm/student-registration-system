@@ -14,13 +14,11 @@ The software was coded on the Linux system. If you want to run on windows some c
 
 ### For example this.
 
-Change that 
-
+Change that
 ```
  __fpurge(stdin)
 ```
-to
-
+To
 ```
  fflush(stdin)
 ```
