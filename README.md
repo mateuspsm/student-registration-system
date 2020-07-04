@@ -1,1 +1,1 @@
-Project C - CRUD Control of student grades
+Control of student grades - C Project CRUD

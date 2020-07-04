@@ -1,13 +1,3 @@
-/* Control Note - Version 1.0
-**
-** Student grade control software.
-** Author: Mateus Pereira.
-** Student of Systems Analysis and Development.
-** Project: Structured Programming Project.
-**
-*/
-
-//Built using the linux operating system in C language.
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -16,7 +6,6 @@
 #define EXPR_REG "[A-z]{3,20}\\s[A-z]{2,20}"
 #define EXPR_REG2 "[A-z]{5,20}\\s[A-z]{2,20}|[A-z]{2,20}"
 
-//Struct Aluno
 typedef struct
 {
     int codigo;
