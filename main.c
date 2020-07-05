@@ -1,20 +1,14 @@
 //Import Libraries.
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-#include <regex.h>
-#include "Headers/menu.h"
-#include "Headers/aluno.h"
+#include "menu.c"
+#include "aluno.c"
 
 int main()
 {
     Aluno aluno;
     int op;
-    
+
     do
     {
-        
         op = menu();
         switch (op)
         {
