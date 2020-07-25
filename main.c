@@ -1,3 +1,9 @@
+/*Project Name: CRUD - c
+* Purpose of the program: Work with CRUD in C language. Manipulate student data and grades.
+* Author: Mateus Pereira
+* Creation date: 10/06/2020
+*/
+
 //Import Libraries.
 #include "menu.c"
 #include "aluno.c"
