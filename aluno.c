@@ -19,6 +19,7 @@ void acrescentarDados(Aluno aluno)
         {
             aluno.codigo = cont;
             validaNome(aluno.nome);
+            validaCpf(aluno.cpf);
             validaDisciplina(aluno.disciplina);
 
             for (i = 0; i < 3; i++)
@@ -28,7 +29,7 @@ void acrescentarDados(Aluno aluno)
 
             if (fwrite(&aluno, sizeof(aluno), 1, arq))
             {
-                fprintf(cpy, "%d %s %s %f %f %f\n", aluno.codigo, aluno.nome, aluno.disciplina, aluno.notas[0], aluno.notas[1], aluno.notas[2]);
+                fprintf(cpy, "%d %s %s %s %f %f %f\n", aluno.codigo, aluno.nome,aluno.cpf, aluno.disciplina, aluno.notas[0], aluno.notas[1], aluno.notas[2]);
                 printf("\n\t\t\tDados cadastrados com sucesso.");
                 cont++;
             }
@@ -48,7 +49,7 @@ void acrescentarDados(Aluno aluno)
 void listarDados(Aluno aluno)
 {
     FILE *arq = fopen("aluno.dat", "rb");
-    int i, count=0;
+    int i, count = 0;
     if (arq == NULL)
     {
         puts("\t\t\tArquivo inexistente.");
@@ -60,16 +61,17 @@ void listarDados(Aluno aluno)
         cabecalho("LISTA DE ALUNOS");
         while (fread(&aluno, sizeof(aluno), 1, arq) != 0)
         {
-            if(strcmp(aluno.nome,"\0")==0){
-                
-            }else
+            if (strcmp(aluno.nome, "\0") == 0)
+            {
+            }
+            else
             {
                 count++;
                 printf("\n\t\t\tCódigo do aluno: %d | ", aluno.codigo);
                 printf("Nome: %s", aluno.nome);
             }
         };
-        if(count==0)
+        if (count == 0)
             printf("\n\t\t\tNenhum registro foi encontrado.");
         fclose(arq);
         puts("\n\n\n\n\t\t\tTecle ENTER para continuar: ");
@@ -108,6 +110,7 @@ void consultarAluno(Aluno aluno)
             {
                 printf("\n\t\t\tCódigo do aluno: %d", aluno.codigo);
                 printf("\n\t\t\tNome: %s", aluno.nome);
+                printf("\n\t\t\tCPF: %s", aluno.cpf);
                 printf(" - Disciplina: %s", aluno.disciplina);
                 printf("\n\t\t\tNotas: ");
                 for (i = 0; i < 3; i++)
@@ -166,35 +169,41 @@ void alterarNotaDoAluno(Aluno aluno)
     }
 }
 
-void deletarAluno(Aluno aluno){
-    FILE *arq = fopen("aluno.dat","r+b");
-    int codigo,i;
+void deletarAluno(Aluno aluno)
+{
+    FILE *arq = fopen("aluno.dat", "r+b");
+    int codigo, i;
 
-    if(arq==NULL){
+    if (arq == NULL)
+    {
         puts("\t\t\tArquivo inexistente.");
         __fpurge(stdin);
         getchar();
-    } 
-    else{
+    }
+    else
+    {
         cabecalho("DELETAR ALUNO");
         printf("\n\t\t\tDigite o código do aluno: ");
-        scanf("%d",&codigo);
+        scanf("%d", &codigo);
 
-        fseek(arq,sizeof(Aluno)*(codigo-1),SEEK_SET);
-        if(ferror(arq))
+        fseek(arq, sizeof(Aluno) * (codigo - 1), SEEK_SET);
+        if (ferror(arq))
             printf("\n\t\t\tErro no posicionamento do cursor.");
-        else{
-            fread(&aluno,sizeof(aluno),1,arq);
-            if(ferror(arq))
+        else
+        {
+            fread(&aluno, sizeof(aluno), 1, arq);
+            if (ferror(arq))
                 printf("\n\t\t\tEr03 - Erro na leitura do arquivo.");
-            else{
-                strcpy(aluno.nome,"\0");
-                strcpy(aluno.disciplina,"\0");
-                for (i = 0; i < 3; i++){
-                    aluno.notas[i]=0;
+            else
+            {
+                strcpy(aluno.nome, "\0");
+                strcpy(aluno.disciplina, "\0");
+                for (i = 0; i < 3; i++)
+                {
+                    aluno.notas[i] = 0;
                 }
-                fseek(arq,sizeof(Aluno)*(codigo-1),SEEK_SET);
-                fwrite(&aluno,sizeof(aluno),1,arq);
+                fseek(arq, sizeof(Aluno) * (codigo - 1), SEEK_SET);
+                fwrite(&aluno, sizeof(aluno), 1, arq);
             }
         }
         fclose(arq);
@@ -247,6 +256,54 @@ void validaNome(char nome[])
             {
                 printf("\t\t\tNome invalido\n");
                 result = 1;
+            }
+        } while (result == 1);
+    }
+}
+
+void validaCpf(char cpf[])
+{
+    regex_t reg;
+    int result, i, count;
+
+    if (regcomp(&reg, Expr_REG_CPF, REG_EXTENDED | REG_NOSUB) != 0)
+    {
+        printf("\t\t\tExpressao regular invalida!\n");
+        return 1;
+    }
+    else
+    {
+        do
+        {
+            printf("\n\t\t\tDigite o CPF do aluno: ");
+            __fpurge(stdin);
+            gets(cpf);
+
+            if ((regexec(&reg, cpf, 0, (regmatch_t *)NULL, 0)) == 0)
+            {
+                count = 0;
+                for (i = 1; i < 11; i++)
+                {
+                    if (cpf[0] == cpf[i])
+                    {
+                        count++;
+                    }
+                }
+
+                if (count != 10)
+                {
+                    printf("\t\t\tCPF válido.\n");
+                    result = 0;
+                }
+                else
+                {
+                    printf("\t\t\tCPF inválido.\n");
+                    result = 1;
+                }
+            }
+            else
+            {
+                printf("\t\t\tCPF inválido.\n");
             }
         } while (result == 1);
     }
