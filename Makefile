@@ -5,4 +5,4 @@ all:
 run:
 	./bin/main
 clean:
-	rm ./obj/* ./bin/* ./files/*
+	rm ./obj/*.o ./bin/main ./files/*.dat /files/*.txt
