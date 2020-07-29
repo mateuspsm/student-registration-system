@@ -6,7 +6,7 @@ This project aims to record students and their grades by saving this data in a b
 
 ## Use Case Diagram
 
-![use case](https://github.com/mateuspsm/CRUD-C/blob/master/Use%20Case/use-case-v1.0.png)
+![use case](https://github.com/mateuspsm/crud-c/blob/master/use%20case/use-case-v1.0.png)
 
 ## Running project
 
