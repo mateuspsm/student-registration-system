@@ -1,8 +1,8 @@
 #include "../include/aluno.h"
 #define TAM 100
-#define EXPR_REG "[A-z]{3,20}\\s[A-z]{2,20}"
-#define EXPR_REG2 "[A-z]{5,20}\\s[A-z]{2,20}|[A-z]{2,20}"
-#define Expr_REG_CPF "[0-9]{11}|[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"
+#define EXPR_REG_NOME "[A-z]{3,20}\\s[A-z]{2,20}"
+#define EXPR_REG_DISCIPLINA "[A-z]{5,20}\\s[A-z]{2,20}|[A-z]{2,20}"
+#define EXPR_REG_CPF "[0-9]{11}|[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"
 
 struct _aluno
 {
@@ -19,7 +19,7 @@ void validaNome(char nome[])
     regex_t reg;
     int result;
 
-    if (regcomp(&reg, EXPR_REG, REG_EXTENDED | REG_NOSUB) != 0)
+    if (regcomp(&reg, EXPR_REG_NOME, REG_EXTENDED | REG_NOSUB) != 0)
     {
         printf("\t\t\tExpressao regular invalida!\n");
         return 1;
@@ -52,7 +52,7 @@ void validaCpf(char cpf[])
     regex_t reg;
     int result;
 
-    if (regcomp(&reg, Expr_REG_CPF, REG_EXTENDED | REG_NOSUB) != 0)
+    if (regcomp(&reg, EXPR_REG_CPF, REG_EXTENDED | REG_NOSUB) != 0)
     {
         printf("\t\t\tExpressao regular invalida!\n");
         return 1;
@@ -84,7 +84,7 @@ void validaDisciplina(char nome[])
     regex_t reg;
     int result;
 
-    if (regcomp(&reg, EXPR_REG2, REG_EXTENDED | REG_NOSUB) != 0)
+    if (regcomp(&reg, EXPR_REG_DISCIPLINA, REG_EXTENDED | REG_NOSUB) != 0)
     {
         printf("\t\t\tExpressao regular invalida!\n");
         return 1;
