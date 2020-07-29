@@ -5,12 +5,10 @@
 */
 
 //Import Libraries.
-#include "menu.c"
-#include "aluno.c"
+#include "../include/aluno.h"
 
 int main()
 {
-    Aluno aluno;
     int op;
 
     do
@@ -19,19 +17,19 @@ int main()
         switch (op)
         {
         case 1:
-            acrescentarDados(aluno);
+            acrescentarDados();
             break;
         case 2:
-            listarDados(aluno);
+            listarDados();
             break;
         case 3:
-            consultarAluno(aluno);
+            consultarAluno();
             break;
         case 4:
-            alterarNotaDoAluno(aluno);
+            alterarNotaDoAluno();
             break;
         case 5:
-            deletarAluno(aluno);
+            deletarAluno();
             break;
         case 6:
             puts("\t\t\tSaindo...");
