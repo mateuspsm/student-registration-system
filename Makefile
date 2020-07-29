@@ -5,4 +5,4 @@ all:
 run:
 	./bin/main
 clean:
-	rm ./obj/*.o ./bin/main ./files/*.dat /files/*.txt
+	rm ./obj/*.o ./bin/main ./files/aluno.dat ./files/aluno.txt
