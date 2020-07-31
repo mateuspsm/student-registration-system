@@ -9,5 +9,6 @@
     void apagarArquivo();
     int countInd();
     void deletarAluno();
+    void alunosInativos();
     
 #endif

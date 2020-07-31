@@ -32,12 +32,15 @@ int main()
             deletarAluno();
             break;
         case 6:
+            alunosInativos();
+            break;
+        case 7:
             puts("\t\t\tSaindo...");
             break;
         default:
             printf("\t\t\tOpção invalida.\n");
             break;
         }
-    } while (op != 6);
+    } while (op != 7);
     return (0);
 }
