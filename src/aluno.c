@@ -187,7 +187,6 @@ int verificarCPF(char cpf[])
         __fpurge(stdin);
         getchar();
     }
-
     else
     {
         while (fread(&aluno, sizeof(aluno), 1, arq) != 0)
