@@ -17,5 +17,4 @@
     int countInd();
     void deletarAluno();
     void alunosInativos();
-    
 #endif
