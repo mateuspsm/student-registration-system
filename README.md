@@ -1,38 +1,84 @@
-# Control of student grades - C Project CRUD
-
-## About the project
-
-This project aims to record students and their grades by saving this data in a binary file. The software allows listing, consulting and changing the students' grades.
-
-## Use Case Diagram
-
-![use case](https://github.com/mateuspsm/crud-c/blob/master/use%20case/use-case-v1.0.png)
-
-## Running project
-
-The software was coded on the Linux system. If you want to run on windows some changes must be made.
-
-### For example this.
-
-Change that
-```
- __fpurge(stdin)
-```
-To
-```
- fflush(stdin)
-```
+# Sistema de Controle de Alunos - C Project CRUD
 
 ## Version
 
 Version: 1.0
 
-## Authors
+## Sobre o Mini-Projeto
+
+Este mini-projeto feito em linguagem C, foi desenvolvido como trabalho final para a disciplina de programação estruturada da faculdade. A ideia era trabalhar todos os conhecimentos adiquiridos durante o semestre.
+Dentre eles:
+ - Variáveis e Constantes
+ - Funções
+ - Structs
+ - Arrays
+ - Arquivos binários e texto - CRUD
+ - Validações
+ - Cabeçalhos
+ - Arquivo Makefile
+
+## Caso de Uso do Mini-Projeto
+
+![use case](https://github.com/mateuspsm/crud-c/blob/master/use%20case/use-case-v1.0.png)
+
+## Pré-requisitos
+
+Ter um compilador instalado.
+Algumas opções são: GCC e MinGW
+
+## Ferramentas utilizadas
+ - Visual Studio Code
+ - Git e Github
+
+## Como rodar o Mini-Projeto
+
+Tendo um compilador instalado, basta entrar na pasta raiz do projeto e abrir o teminal para rodar o seguinte código:
+
+### Compilar os arquivos
+```
+make
+```
+
+### Executar o Mini-Projeto
+```
+make run
+```
+
+### Limpar arquivos
+```
+make clean
+```
+
+### Observação
+
+O projeto foi feito em linux, por questões de compilador, o comando de limpeza de buffer deve mudar.
+
+Mude isso:
+```
+ __fpurge(stdin)
+```
+Para isso:
+```
+ fflush(stdin)
+```
+
+## Autor
 
 * **Mateus Perera** - *Student* - [Linkedin](https://www.linkedin.com/in/mateus-pereira-971946197/)
 
+## Referencias
+
+Na construção do projeto fiz algumas pesquisas que ajudaram muito as quais destaco:
+ - Prof. Samuka [YouTube](https://www.youtube.com/watch?v=v3dSoFDSe-I&list=PL3ZslI15yo2qiGb4u7fLlbKGL2nTNV8F3)
+ - Prof. Edwar Saliba [Apostila](https://www.youtube.com/watch?v=v3dSoFDSe-I&list=PL3ZslI15yo2qiGb4u7fLlbKGL2nTNV8F3)
+ - André [Artigo - Viva O Linux](https://www.vivaolinux.com.br/artigo/Expressoes-Regulares-(POSIX)-em-C)
+ - Apostila da UFMG de C [Apostila](http://paginapessoal.utfpr.edu.br/lalucas/disciplinas/el71e-s01-algoritmos/C_UFMG.pdf/view)
+ - Além do material disponibilizado pelo professor da disciplina.
+
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+[MIT](/LICENSE) &copy; Mateus Pereira - Brasil
 
-## Thanks.
+# FIM
+## Obrigado!
+
