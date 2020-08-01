@@ -44,19 +44,19 @@ void validaNome(char nome[])
 
             if ((regexec(&reg, nome, 0, (regmatch_t *)NULL, 0)) == 0)
             {
-                printf("\t\t\tNome valido\n");
                 result = 0;
             }
             else
             {
                 printf("\t\t\tNome invalido\n");
                 result = 1;
-                printf("\t\t\tValor: [%d]\n", result);
             }
         } while (result == 1);
     }
 }
 
+/* Função recebe uma string por referencia, para garantir que tenha 11 caracteres, e somente numeros. 
+** Usando funções da biblioteca Regex.c.*/
 void validaCpf(char cpf[])
 {
     regex_t reg;
@@ -71,7 +71,7 @@ void validaCpf(char cpf[])
     {
         do
         {
-            printf("\n\t\t\tAtenção somente número.");
+            printf("\n\t\t\tAtenção digite somente números.");
             printf("\n\t\t\tDigite o CPF do aluno: ");
             __fpurge(stdin);
             gets(cpf);
@@ -96,6 +96,10 @@ void validaCpf(char cpf[])
     }
 }
 
+
+/* Função recebe uma string por referencia contendo um texto que será verificada se está vazia,
+** ou se tem no minimo 5 letras para validação de uma disciplina.
+** Usando funções da biblioteca Regex.c.*/
 void validaDisciplina(char nome[])
 {
     regex_t reg;
@@ -116,7 +120,6 @@ void validaDisciplina(char nome[])
 
             if ((regexec(&reg, nome, 0, (regmatch_t *)NULL, 0)) == 0)
             {
-                printf("\t\t\tDisciplina válida.\n");
                 result = 0;
             }
             else
@@ -128,6 +131,9 @@ void validaDisciplina(char nome[])
     }
 }
 
+/* Função recebe um inteiro que controla o indice de um array de notas como parametro,
+** e verifica se ele está vazio, maior ou igual a 0, e por fim se é menor ou igual a 10
+** ,ao final, a função retorna um número de ponto flutuante validado.*/
 float validarNotas(int i)
 {
     float nota = 0;
@@ -143,6 +149,9 @@ float validarNotas(int i)
     return nota;
 }
 
+
+/* Função abre e le um arquivo binário, para verificar a quantidade de cadastros por linha para
+** ter o controle sobre os indices de cadas aluno.*/
 int countInd()
 {
     FILE *arq = fopen("files/aluno.dat", "rb");
@@ -163,6 +172,10 @@ int countInd()
     fclose(arq);
 }
 
+
+/* Função recebe uma string por referencia, e compara com outros valores de mesmo tipo
+** existentes em um arquivo binario. Caso seja encontrado um valor igual, é retornado o valor 1, caso contratio 0.
+** Usando funções da biblioteca Regex.c.*/
 int verificarCPF(char cpf[])
 {
     FILE *arq = fopen("files/aluno.dat", "rb");
@@ -171,7 +184,6 @@ int verificarCPF(char cpf[])
 
     if (arq == NULL)
     {
-        puts("\t\t\tArquivo inexistente.");
         __fpurge(stdin);
         getchar();
     }
@@ -189,20 +201,17 @@ int verificarCPF(char cpf[])
                 if (strcmp(aluno.cpf, cpf) == 0)
                 {
                     printf("\n\t\t\tO CPF já se encontra cadastrado no sistema.");
-                    printf("\n\t\t\tVariavel aluno.cpf [%s]", aluno.cpf);
-                    printf("\n\t\t\tVariavel cpf [%s]", cpf);
                     return 1;
                 }
             }
         };
         if (count == 0)
         {
-            printf("\n\t\t\tNenhum registro foi encontrado.");
+            puts("\n\n\n\n\t\t\tTecle ENTER para continuar: ");
             return 0;
         }
         else
         {
-            printf("\n\t\t\tO CPF não se encontra cadastrado no sistema.");
             return 0;
         }
         fclose(arq);
@@ -212,6 +221,9 @@ int verificarCPF(char cpf[])
     }
 }
 
+
+/* Função sem retorno responsavel pelo cadastro de alunos e suas notas. Cria um arquivo binario no modo ab caso não exista,
+** onde são acresentados novos registros sempre ao fim do arquivo.*/
 void acrescentarDados()
 {
     FILE *arq = fopen("files/aluno.dat", "a+b");
@@ -258,6 +270,9 @@ void acrescentarDados()
     fclose(cpy);
 }
 
+
+/* Função responsavel pela listagem de todos alunos cadastrados. Abre um arquivo binario no modo rb,
+** recebe os valores do arquivo e colocar em variaveis para impressão na tela.*/
 void listarDados()
 {
     FILE *arq = fopen("files/aluno.dat", "rb");
@@ -293,6 +308,9 @@ void listarDados()
     }
 }
 
+/* Função responsavel pela consulta aos dados de um aluno especifico cadastrado. 
+** Onde é informado o codigo do aluno para a pesquisa. Abre um arquivo binario no modo rb,
+** recebe os valores do arquivo e colocar em variaveis para impressão na tela.*/
 void consultarAluno()
 {
     FILE *arq = fopen("files/aluno.dat", "rb");
@@ -341,6 +359,10 @@ void consultarAluno()
     }
 }
 
+
+/* Função responsavel pela atualização de notas de um aluno especifico cadastrado. 
+** Onde é informado o codigo do aluno para alteração. Abre um arquivo binario no modo r+b,
+** onde o programa solicita novas notas e faz o update de acordo com o codigo.*/
 void alterarNotaDoAluno()
 {
     FILE *arq = fopen("files/aluno.dat", "r+b");
@@ -384,6 +406,11 @@ void alterarNotaDoAluno()
     }
 }
 
+
+/* Função responsavel por deletar um aluno especifico cadastrado. 
+** Onde é informado o codigo do aluno para exclusão. Abre um arquivo binario no modo r+b,
+** onde o programa deleta os dados do aluno de acordo com o codigo, e salva o cpf e nome em um arquivo 
+** de backup, para futuro cadastramento.*/
 void deletarAluno()
 {
     FILE *arq = fopen("files/aluno.dat", "r+b");
@@ -432,6 +459,9 @@ void deletarAluno()
     }
 }
 
+
+/* Função responsavel pela listagem de todos alunos inativos do sistema. Abre um arquivo binario no modo rb,
+** recebe os valores do arquivo e colocar em variaveis para impressão na tela.*/
 void alunosInativos()
 {
     FILE *arq = fopen("files/aluno_backup.dat", "r+b");
@@ -467,6 +497,9 @@ void alunosInativos()
     }
 }
 
+
+/* Função que pesquisa se o aluno já foi cadastrano no sistema anteriormente e está inátino,
+** a função dá a opção de restaurar o aluno.*/
 int restorarInativos(char cpf[])
 {
     FILE *arq = fopen("files/aluno_backup.dat", "r+b");
@@ -476,7 +509,6 @@ int restorarInativos(char cpf[])
 
     if (arq == NULL)
     {
-        puts("\t\t\tArquivo inexistente.");
         __fpurge(stdin);
         getchar();
         return 0;

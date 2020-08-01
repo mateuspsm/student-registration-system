@@ -1,10 +1,10 @@
-/*Project Name: CRUD - c
-* Purpose of the program: Work with CRUD in C language. Manipulate student data and grades.
+/* Project Name: CRUD - C
+** Mini projeto, para cadastro de alunos e suas notas em arquivos. Trabalhando as operações de um CRUD.
 * Author: Mateus Pereira
 * Creation date: 10/06/2020
 */
 
-//Import Libraries.
+//Incluindo a biblioteca de função para manipulação de alunos.
 #include "../include/aluno.h"
 
 int main()
