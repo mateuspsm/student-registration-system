@@ -1,8 +1,7 @@
 /* Project Name: CRUD - C
 ** Mini projeto, para cadastro de alunos e suas notas em arquivos. Trabalhando as operações de um CRUD.
-* Author: Mateus Pereira
-* Creation date: 10/06/2020
-*/
+** Author: Mateus Pereira
+** Creation date: 10/06/2020 */
 
 //Incluindo a biblioteca de função para manipulação de alunos.
 #include "../include/aluno.h"
