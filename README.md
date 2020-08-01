@@ -34,24 +34,26 @@ Algumas opções são: GCC e MinGW
 
 Tendo um compilador instalado, basta entrar na pasta raiz do projeto e abrir o teminal para rodar o seguinte código:
 
-### Compilar os arquivos
-```
-make
-```
-
 ### Executar o Mini-Projeto
 ```
 make run
 ```
+
+Caso queira re-compilar o projeto. Use esses comando:
 
 ### Limpar arquivos
 ```
 make clean
 ```
 
+### Compilar os arquivos
+```
+make
+```
+
 ### Observação
 
-O projeto foi feito em linux, por questões de compilador, o comando de limpeza de buffer deve mudar.
+O projeto foi feito em linux, já deixei o projeto compilado aqui. Caso queira compila-lo novamente por questões de compilador, o comando de limpeza de buffer deve mudar se estiver no S.O Windows.
 
 Mude isso:
 ```
@@ -79,6 +81,5 @@ Na construção do projeto fiz algumas pesquisas que ajudaram muito as quais des
 
 [MIT](/LICENSE) &copy; Mateus Pereira - Brasil
 
-# FIM
 ## Obrigado!
 
