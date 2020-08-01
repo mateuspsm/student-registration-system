@@ -7,3 +7,4 @@ run:
 	./bin/main
 clean:
 	rm -rf ./obj/ ./bin/ ./files/
+	
