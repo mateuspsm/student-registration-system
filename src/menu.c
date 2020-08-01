@@ -17,6 +17,7 @@ void cabecalho(char *titulo)
 int menu()
 {
     int op;
+    
     cabecalho("MENU DE OPÇÕES");
     puts("\t\t\t-------------------------");
     puts("\t\t\t|| 1 |- Cadastrar Aluno |");
