@@ -75,7 +75,7 @@ Na construção do projeto fiz algumas pesquisas que ajudaram muito as quais des
  - Apostila da UFMG de C [Apostila](http://paginapessoal.utfpr.edu.br/lalucas/disciplinas/el71e-s01-algoritmos/C_UFMG.pdf/view)
  - Além do material disponibilizado pelo professor da disciplina.
 
-## License
+## Licença
 
 [MIT](/LICENSE) &copy; Mateus Pereira - Brasil
 
