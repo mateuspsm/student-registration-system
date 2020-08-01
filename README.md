@@ -32,26 +32,26 @@ Algumas opções são: GCC e MinGW
 
 ## Como rodar o Mini-Projeto
 
-Tendo um compilador instalado, basta entrar na pasta raiz do projeto e abrir o teminal para rodar o seguinte código:
+### Tendo um compilador instalado, basta entrar na pasta raiz do projeto e abrir o teminal para rodar o seguinte código:
 
-### Executar o Mini-Projeto
+#### Executar o Mini-Projeto
 ```
 make run
 ```
 
-Caso queira re-compilar o projeto. Use esses comandos em sequencia:
+### Caso queira re-compilar o projeto. Use esses comandos em sequencia:
 
-### Limpar os arquivos do projeto atual
+#### Limpar os arquivos do projeto atual
 ```
 make clean
 ```
 
-### Compilar os arquivos
+#### Compilar os arquivos
 ```
 make
 ```
 
-### Executar o Mini-Projeto
+#### Executar o Mini-Projeto
 ```
 make run
 ```
@@ -60,11 +60,11 @@ make run
 
 O projeto foi feito em linux, já deixei o projeto compilado aqui. Caso queira compila-lo novamente por questões de compilador, o comando de limpeza de buffer deve mudar se estiver no S.O Windows.
 
-Mude isso:
+#### Mude isso:
 ```
  __fpurge(stdin)
 ```
-Para isso:
+#### Para isso:
 ```
  fflush(stdin)
 ```
