@@ -39,9 +39,9 @@ Tendo um compilador instalado, basta entrar na pasta raiz do projeto e abrir o t
 make run
 ```
 
-Caso queira re-compilar o projeto. Use esses comando:
+Caso queira re-compilar o projeto. Use esses comandos em sequencia:
 
-### Limpar arquivos
+### Limpar os arquivos do projeto atual
 ```
 make clean
 ```
@@ -49,6 +49,11 @@ make clean
 ### Compilar os arquivos
 ```
 make
+```
+
+### Executar o Mini-Projeto
+```
+make run
 ```
 
 ### Observação
