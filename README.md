@@ -34,6 +34,11 @@ Algumas opções são: GCC e MinGW
 
 ### Tendo um compilador instalado, basta entrar na pasta raiz do projeto e abrir o teminal para rodar o seguinte código:
 
+#### Compilar os arquivos
+```
+make
+```
+
 #### Executar o Mini-Projeto
 ```
 make run
@@ -44,16 +49,6 @@ make run
 #### Limpar os arquivos do projeto atual
 ```
 make clean
-```
-
-#### Compilar os arquivos
-```
-make
-```
-
-#### Executar o Mini-Projeto
-```
-make run
 ```
 
 ### Observação
