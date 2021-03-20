@@ -66,7 +66,45 @@ O projeto foi feito em linux, já deixei o projeto compilado aqui. Caso queira c
 
 ## Autor
 
-* **Mateus Perera** - *Student* - [Linkedin](https://www.linkedin.com/in/mateus-pereira-971946197/)
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/mateus-pereira-971946197/">
+        <img src="img/mateus.jpeg" width="100px;" alt=""/><br>
+        <sub>
+          <b>Mateus Pereira</b>
+        </sub>
+      </a>
+    </td>
+  </tr>  
+</table>
+
+
+[Linkedin][LinkedIn]
+
+[Gmail][LinkedIn]
+
+[Instagram][LinkedIn]
+
+[GitHub][LinkedIn]
+
+[Spotify][LinkedIn]
+
+[LinkedIn]: https://www.linkedin.com/in/mateus-pereira-de-souza-moreira/
+[Gmail]: mailto:mateuusth14@gmail.com
+[Instagram]: https://www.instagram.com/__mateus_pereira/
+[GitHub]: https://github.com/mateuspsm
+[Spotify]: https://open.spotify.com/user/21k6foq2cv27iuic5qlpwdbey
+
+## Contribuição
+
+## Conclusão
+
+Agradecimentos
+
+## Licença
+
+Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais informações.
 
 ## Referencias
 
@@ -76,9 +114,3 @@ Na construção do projeto fiz algumas pesquisas que ajudaram muito as quais des
  - André [Artigo - Viva O Linux](https://www.vivaolinux.com.br/artigo/Expressoes-Regulares-(POSIX)-em-C)
  - Apostila da UFMG de C [Apostila](http://paginapessoal.utfpr.edu.br/lalucas/disciplinas/el71e-s01-algoritmos/C_UFMG.pdf/view)
  - Além do material disponibilizado pelo professor da disciplina.
-
-## Licença
-
-[MIT](https://opensource.org/licenses/mit-license.php) &copy; Mateus Pereira - Brasil
-
-## Obrigado!
